@@ -1,0 +1,5 @@
+#!/bin/bash
+scrot /tmp/screenshot.png
+convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
+convert /tmp/screenshotblur.png /home/wellington/Imagens/upzibgR.png -background none -flatten /tmp/screenshotblurmark.png
+i3lock -i /tmp/screenshotblurmark.png

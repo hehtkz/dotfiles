@@ -1,0 +1,28 @@
+#!/bin/bash
+
+data() {
+echo "`date +"%a %e %H:%M"`"
+}
+
+mpd() {
+stat=$(mpc status | egrep '(playing|paused)')
+if [[ -n $stat ]]; then
+  music=$(mpc status | head -1)
+ 	time=$(mpc status | awk 'NR==2 {print $3}')
+ 	echo "$music $time"
+else
+  echo
+fi
+}
+
+mem() {
+	mem_tot=($(free -m | awk '/Mem/ {print $2}'))
+    mem_use=($(free -m | awk '/Mem/ {print $3}'))
+    let mem_per=(mem_use*100)/mem_tot
+    echo "$mem_per% ($mem_use)"
+}
+
+while true; do
+echo "$(mpd) | $(mem) | $(data)"
+sleep 1
+done

@@ -1,0 +1,65 @@
+! xterm conf -------------------------------------------------------------------
+xterm*termName: xterm-256color
+XTerm*locale: true
+xterm*faceName: Inconsolata:pixelsize=13.5
+XTerm.vt100.geometry:   80x24
+xterm*background: #2C2C2C
+xterm*allowBoldFonts: false
+xterm*foreground: #DCDCDC
+xterm*scrollBar: false
+
+! colors: x-dotshare by crshd
+! special
+*.foreground:   #d7d0c7
+*.background:   #151515
+*.cursorColor:  #d7d0c7
+! black
+*.color0:       #101010
+*.color8:       #404040
+! red
+*.color1:       #e84f4f
+*.color9:       #d23d3d
+! green
+*.color2:       #b8d68c
+*.color10:      #a0cf5d
+! yellow
+*.color3:       #e1aa5d
+*.color11:      #f39d21
+! blue
+*.color4:       #7dc1cf
+*.color12:      #4e9fb1
+! magenta
+*.color5:       #9b64fb
+*.color13:      #8542ff
+! cyan
+*.color6:       #6d878d
+*.color14:      #42717b
+! white
+*.color7:       #dddddd
+*.color15:      #dddddd
+
+! rofi conf --------------------------------------------------------------------
+! Use extended color scheme
+rofi.color-enabled: true
+!                  background        border      separator
+rofi.color-window: argb:ee212121,    #252525,    #212121
+
+!                  background      foreground  alt back        highl back  highl fore
+rofi.color-normal: argb:000000,    #6e6e6e,    argb:000000,    #6e6e6e,    #eee8d5
+rofi.color-active: #6d718b,        #e1e1e1,    #6d718b,        #268bd2,    #fdf6e3
+rofi.color-urgent: #2e314a,        #dc322f,    #2e314a,        #dc322f,    #fdf6e3
+
+rofi.padding: 400 
+rofi.opacity: 85
+
+rofi.run-command: /bin/zsh -i -c '{cmd}'
+rofi.run-list-command: 'zsh -c functions && alias'
+
+rofi.font: Inconsolata 12
+rofi.lines: 20
+rofi.fixed-num-lines: true
+! dzen conf ---------------------------------------------------------
+
+dzen2.font: -*-fixed-*-*-*-*-*-*-*-*-*-*-*-*
+dzen2.foreground: #22EE11
+dzen2.background: black

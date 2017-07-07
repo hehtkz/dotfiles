@@ -1,0 +1,8 @@
+#!/bin/bash
+OIFS="$IFS"
+IFS=$'\n'
+for file in `find . -type f -iregex '.*[mkv|avi|mp4]'`  
+do
+     subdl $file
+done
+IFS="$OIFS"

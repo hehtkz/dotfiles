@@ -1,0 +1,6 @@
+[user]
+	email = viana.swe@gmail.com
+	name = Wellington Viana
+	
+[url "git://github.com/"]
+    insteadOf = gh:

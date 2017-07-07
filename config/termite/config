@@ -1,0 +1,63 @@
+[options]
+urgent_on_bell = true
+font = Inconsolata 12
+allow_bold = true
+scrollback_lines = 5000
+search_wrap = true
+geometry = 640x480
+# "system", "on" or "off"
+cursor_blink = off
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+browser = chromium
+clickable_url = true
+
+# Jelly Beans
+[colors]
+cursor = #e6e1dc
+foreground = #A9ACB2
+foreground_bold = #efefef
+background = rgba(21, 21, 21, 0.6)
+highlight = #222222
+
+[colors]
+
+# special
+foreground      = #b9b9b9
+foreground_bold = #b9b9b9
+cursor          = #b9b9b9
+background      = #101010
+
+# black
+color0  = #101010
+color8  = #525252
+
+# red
+color1  = #7c7c7c
+color9  = #7c7c7c
+
+# green
+color2  = #8e8e8e
+color10 = #8e8e8e
+
+# yellow
+color3  = #a0a0a0
+color11 = #a0a0a0
+
+# blue
+color4  = #686868
+color12 = #686868
+
+# magenta
+color5  = #747474
+color13 = #747474
+
+# cyan
+color6  = #868686
+color14 = #868686
+
+# white
+color7  = #b9b9b9
+color15 = #f7f7f7
