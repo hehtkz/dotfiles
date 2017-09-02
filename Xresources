@@ -42,11 +42,11 @@ xterm*scrollBar: false
 ! Use extended color scheme
 rofi.color-enabled: true
 !                  background        border      separator
-rofi.color-window: argb:ee212121,    #252525,    #212121
+rofi.color-window: argb:ee000000,    #252525,    #212121
 
 !                  background      foreground  alt back        highl back  highl fore
-rofi.color-normal: argb:000000,    #6e6e6e,    argb:000000,    #6e6e6e,    #eee8d5
-rofi.color-active: #6d718b,        #e1e1e1,    #6d718b,        #268bd2,    #fdf6e3
+rofi.color-normal: argb:000000,    #676767,    argb:000000,    #6e6e6e,    #eee8d5
+rofi.color-active: #4c4f61,        #e1e1e1,    #4c4f61,        #268bd2,    #fdf6e3
 rofi.color-urgent: #2e314a,        #dc322f,    #2e314a,        #dc322f,    #fdf6e3
 
 rofi.padding: 400 
