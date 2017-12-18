@@ -17,10 +17,15 @@ export QT_STYLE_OVERRIDE=gtk2
 export BROWSER=chromium
 export STEAM_RUNTIME=0
 export GTK_PATH=/usr/lib/gtk-3.0:/usr/lib/gtk-2.0
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export TERMINAL=/usr/bin/termite
+export _JAVA_OPTIONS="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on"
 
 compton &
 
-feh --bg-scale $HOME/Imagens/wp/1493631498078.jpg
+unclutter &
+
+feh --bg-scale $HOME/Imagens/wp/$(ls $HOME/Imagens/wp | shuf -n 1)
 
 sleep 5
 
@@ -30,11 +35,12 @@ xautolock -time 10 -locker lock &
 
 xrdb $HOME/.Xresources
 ($HOME/.bin/dwmstatus | while read STAT; do xsetroot -name "$STAT"; done) &
+xmodmap -e 'keysym Super_L = Escape'
 
 # Para o SCIM
-#export XMODIFIERS=@im=SCIM
-#export GTK_IM_MODULE="scim"
-#export QT_IM_MODULE="scim"
+export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
 #scim -d
-
+fcitx
 redshift &
