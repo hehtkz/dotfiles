@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
-SAVEHIST=1000
+SAVEHIST=3000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -11,12 +11,20 @@ compinit
 # End of lines added by compinstall
 
 # Minhas configurações ---------------------------------------------------------
-PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
+PROMPT='%F{red}%n%f %F{yellow}%1~%f %# '
 # Isto é para a tecla DELETE funcionar corretamente
 # Detalhes: http://zsh.sourceforge.net/Guide/zshguide04.html#l81
 bindkey    "^[[3~"          delete-char
+# Para ctrl+left e ctrl+right
+bindkey    "^[[1;5C"        forward-word
+bindkey    "^[[1;5D"        backward-word
+
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+
 function preexec() {
   timer=${timer:-$SECONDS}
+  echo "$(date +"%F-%T") $2" >> ~/.zsh_archived_hist
 }
 
 function precmd() {
@@ -27,7 +35,7 @@ function precmd() {
   fi
 }
 # Exports ----------------------------------------------------------------------
-export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.bin:$HOME/go/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
 export TERM=xterm-256color
@@ -67,19 +75,11 @@ alias s="pacman -Ss"
 alias locals="pacman -Qs"
 alias off="sudo systemctl poweroff"
 alias up="sudo pacman -Syu"
-# alias ror="sudo pacman -Rns $(pacman -Qtdq)"
+#alias ror="sudo pacman -Rns $(pacman -Qtdq)"
 alias pu="pacaur -u"
+alias pu-git="pacaur -Syu --devel --needed"
 alias los="pacman -Qs"
-alias gedit="env GTK_THEME=Arc-Dark gedit"
-alias libreoffice="env GTK_THEME=Arc-Dark libreoffice"
-alias lobase="env GTK_THEME=Arc-Dark lobase"
-alias localc="env GTK_THEME=Arc-Dark localc"
-alias lodraw="env GTK_THEME=Arc-Dark lodraw"
-alias loimpress="env GTK_THEME=Arc-Dark loimpress"
-alias lomath="env GTK_THEME=Arc-Dark lomath"
-alias lowriter="env GTK_THEME=Arc-Dark lowriter"
-alias loffice="env GTK_THEME=Arc-Dark loffice"
-alias soffice="env GTK_THEME=Arc-Dark soffice"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+fortune
