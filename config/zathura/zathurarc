@@ -1,1 +1,8 @@
 set selection-clipboard clipboard
+set adjust-open width
+set default-bg "#909090"
+set recolor true
+set recolor-reverse-video true
+set window-height 1050
+set window-width 1000
+set font "Inconsolata normal 12"
