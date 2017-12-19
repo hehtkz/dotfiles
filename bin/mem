@@ -1,3 +1,0 @@
-#!/bin/bash
-mem_use=($(free -m | awk '/Mem/ {print $3}'))
-echo $mem_use
